@@ -1,0 +1,11 @@
+node_modules/
+dist/
+out/
+*.tsbuildinfo
+.avorant/
+*.log
+.DS_Store
+release/
+
+# app-owned CLI toolkit (built by the installer, never in git)
+runtime/

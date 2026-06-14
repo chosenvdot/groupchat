@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  esbuild: true
+  electron: true
+  '@electron/rebuild': false
+  better-sqlite3: false

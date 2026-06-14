@@ -1,0 +1,145 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0b0e14;
+  --color-panel: #11151c;
+  --color-raised: #161b24;
+  --color-border: #232a35;
+  --color-text: #e6eaf2;
+  --color-dim: #8b94a7;
+
+  --color-claude: #d97757;
+  --color-codex: #10a37f;
+  --color-cursor: #38bdf8;
+  --color-antigravity: #4285f4;
+  --color-human: #818cf8;
+
+  --color-approve: #4ade80;
+  --color-changes: #fbbf24;
+  --color-danger: #f87171;
+
+  --color-negotiate: #a78bfa;
+  --color-contract: #60a5fa;
+  --color-work: #34d399;
+  --color-review: #fbbf24;
+  --color-closed: #6b7280;
+
+  --font-sans: 'Segoe UI Variable Text', 'Segoe UI', Inter, system-ui, sans-serif;
+  --font-mono: 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* the 40px frameless titlebar drag strip */
+.titlebar-drag {
+  -webkit-app-region: drag;
+}
+.titlebar-drag button,
+.titlebar-drag a,
+.titlebar-drag [role='button'] {
+  -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 5px;
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes avorant-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 234, 242, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(230, 234, 242, 0);
+  }
+}
+.presence-pulse {
+  animation: avorant-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes avorant-glow {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 18px transparent;
+    opacity: 0.85;
+  }
+}
+.connect-glow {
+  animation: avorant-glow 0.9s ease-out 2;
+}
+
+@keyframes avorant-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.msg-in {
+  animation: avorant-slide-in 0.12s ease-out;
+}
+
+/* markdown body defaults */
+.md-body :is(p, ul, ol, pre, blockquote) {
+  margin: 0.4em 0;
+}
+.md-body code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: var(--color-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+.md-body pre {
+  background: var(--color-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  overflow-x: auto;
+}
+.md-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.md-body ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+.md-body ol {
+  list-style: decimal;
+  padding-left: 1.2em;
+}
+.md-body a {
+  color: var(--color-contract);
+  text-decoration: underline;
+}
