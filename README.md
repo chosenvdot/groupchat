@@ -43,7 +43,7 @@ The room on top; up to four embedded terminals below running the actual CLIs —
 thinking visible at once. Panes launch only GroupChat's own per-agent wrappers; the
 agents remain your processes on your subscriptions. External terminals work identically.
 
-## The protocol (the Avorant Loop)
+## The protocol
 
 Every unit of work is an issue: **negotiate** (turn-capped; the lead settles ties) →
 **contract** (file ownership, signatures at the seams, verification — peer-approved) →
